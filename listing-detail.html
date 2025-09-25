@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Villa - Maitama | G Moh Realty</title>
+    <style>
+        /* Shared Styles (Keep consistent with index.html) */
+        :root {
+            --primary-color: #0c1a3b;
+            --accent-color: #e5a400;
+            --light-bg: #f5f5f5;
+            --text-color: #333;
+            --font-serif: 'Times New Roman', serif;
+            --font-sans: 'Arial', sans-serif;
+        }
+        body { font-family: var(--font-sans); margin: 0; padding-top: 70px; color: var(--text-color); background-color: white; }
+        h1, h2, h3 { font-family: var(--font-serif); color: var(--primary-color); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn { background-color: var(--primary-color); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .btn-accent { background-color: var(--accent-color); margin-left: 20px; }
+        .btn:hover { background-color: #081228; }
+        .btn-accent:hover { background-color: #cc9000; }
+        
+        /* Header (Mocked to show placement) */
+        header { position: fixed; top: 0; left: 0; width: 100%; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 1000; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { font-size: 1.5em; font-family: var(--font-serif); color: var(--primary-color); font-weight: bold; }
+        
+        /* Listing Detail Specific Styles */
+        .listing-header { padding: 40px 0 20px; text-align: left; }
+        .listing-header h1 { font-size: 3em; margin-bottom: 5px; }
+        .listing-header p { font-size: 1.5em; color: #666; margin-top: 0; }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .main-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 5px; }
+        .side-images { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        .side-images img { width: 100%; height: 160px; object-fit: cover; border-radius: 5px; }
+        
+        .main-content { display: flex; gap: 40px; margin-bottom: 60px; }
+        .details-col { flex: 3; text-align: left; }
+        .inquiry-col { flex: 1; background: var(--light-bg); padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+        .key-features { display: flex; justify-content: space-between; margin-top: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background: white; }
+        .feature-item { text-align: center; border-right: 1px solid #eee; padding-right: 20px; }
+        .feature-item:last-child { border-right: none; padding-right: 0; }
+        .feature-item strong { display: block; font-size: 1.5em; color: var(--accent-color); }
+        .feature-item span { font-size: 0.9em; color: #666; }
+
+        .inquiry-col h3 { text-align: center; margin-top: 0; }
+        .inquiry-col input, .inquiry-col textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        
+        @media (max-width: 900px) {
+            .gallery, .main-content { flex-direction: column; display: block; }
+            .side-images { grid-template-columns: repeat(3, 1fr); height: auto; }
+            .side-images img { height: 150px; }
+            .key-features { flex-wrap: wrap; }
+            .feature-item { width: 50%; margin-bottom: 15px; padding-right: 10px; }
+            .feature-item:nth-child(even) { border-right: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">G MOH REALTY</div>
+        <nav><a href="index.html" class="btn">Back to Home</a></nav>
+    </header>
+
+    <div class="container">
+        <div class="listing-header">
+            <p>FOR SALE | Luxury Home in Maitama, Abuja</p>
+            <h1>Exclusive 5-Bedroom Smart Villa</h1>
+            <p style="color: var(--primary-color); font-weight: bold;">₦450,000,000 (Transparently Priced)</p>
+        </div>
+
+        <div class="gallery">
+            <div class="main-image"><img src="https://via.placeholder.com/800x500?text=Primary+Photo+-+Luxury+Facade" alt="Villa Exterior"></div>
+            <div class="side-images">
+                <img src="https://via.placeholder.com/300x160?text=Interior+1" alt="Interior View">
+                <img src="https://via.placeholder.com/300x160?text=Kitchen" alt="Kitchen">
+                <img src="https://via.placeholder.com/300x160?text=Pool+View" alt="Pool">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="details-col">
+                <h2>Key Features</h2>
+                <div class="key-features">
+                    <div class="feature-item"><strong>5</strong><span>Bedrooms</span></div>
+                    <div class="feature-item"><strong>6</strong><span>Bathrooms</span></div>
+                    <div class="feature-item"><strong>1,200</strong><span>SQM Land</span></div>
+                    <div class="feature-item"><strong>Verified</strong><span>Title</span></div>
+                </div>
+
+                <h2>Property Description (Honesty First)</h2>
+                <p style="font-size: 1.1em; line-height: 1.6;">
+                    This stunning 5-bedroom villa in the heart of Maitama is a true luxury find. What you see is what you get—a **verified, fully documented property** priced for fair market value and fast turnover. We are confident in the title and the quality of the build.
+                </p>
+                <p>
+                    The villa features a state-of-the-art smart home system, a private cinema, an infinity pool, and staff quarters. Located minutes from the central business district, this property offers unparalleled security and convenience. We have personally inspected this property and confirmed the owner's willingness to sell at this transparent and non-inflated price.
+                </p>
+                
+                <h3>Community and Location</h3>
+                <ul>
+                    <li>Gated street with 24/7 armed security.</li>
+                    <li>Proximity to high-end schools and embassies.</li>
+                    <li>Excellent road network, no typical Abuja congestion.</li>
+                </ul>
+
+                <h3>View Floor Plan & Video</h3>
+                <p>
+                    <a href="#" class="btn btn-accent">Download Floor Plan (PDF)</a>
+                    <a href="#" class="btn">Watch Virtual Tour</a>
+                </p>
+            </div>
+
+            <div class="inquiry-col">
+                <h3>Schedule Your Viewing</h3>
+                <form onsubmit="alert('Inquiry sent! G Moh will contact you via WhatsApp shortly.'); return false;">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="tel" placeholder="Your Phone/WhatsApp" required>
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Tell us your availability or ask a specific question..." rows="3"></textarea>
+                    <button type="submit" class="btn btn-accent" style="width: 100%;">Contact G Moh Directly</button>
+                    <p style="font-size: 0.8em; text-align: center; margin-top: 15px;">We promise a quick, honest response, focusing on your needs.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
