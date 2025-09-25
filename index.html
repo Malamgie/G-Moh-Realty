@@ -65,11 +65,19 @@
         }
 
         .logo-container {
-            font-size: 1.5em;
-            font-family: var(--font-serif);
-            color: var(--primary-color);
-            font-weight: bold;
-        }
+    font-size: 1.5em; /* header size */
+    font-family: var(--font-serif);
+    color: var(--primary-color);
+    font-weight: bold;
+    display: flex;       /* optional, makes text and image align nicely */
+    align-items: center; /* vertically aligns image with text */
+    gap: 0.5em;          /* space between image and text */
+}
+
+.logo-container img {
+    height: 1em;         /* same as text size (1.5em relative to parent) */
+    width: auto;         /* keep aspect ratio */
+}
         .nav-links a {
             text-decoration: none;
             color: var(--primary-color);
