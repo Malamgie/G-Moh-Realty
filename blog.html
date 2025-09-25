@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Insights & Advice | G Moh Realty</title>
+    <style>
+        /* Shared Styles */
+        :root {
+            --primary-color: #0c1a3b;
+            --accent-color: #e5a400;
+            --light-bg: #f5f5f5;
+            --text-color: #333;
+            --font-serif: 'Times New Roman', serif;
+            --font-sans: 'Arial', sans-serif;
+        }
+        body { font-family: var(--font-sans); margin: 0; padding-top: 70px; color: var(--text-color); background-color: var(--light-bg); }
+        h1, h2, h3 { font-family: var(--font-serif); color: var(--primary-color); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn { background-color: var(--primary-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s; }
+        
+        /* Header (Mocked) */
+        header { position: fixed; top: 0; left: 0; width: 100%; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 1000; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { font-size: 1.5em; font-family: var(--font-serif); color: var(--primary-color); font-weight: bold; }
+
+        /* Blog Specific Styles */
+        .blog-hero { text-align: center; padding: 50px 0; background-color: white; border-bottom: 5px solid var(--accent-color); }
+        .blog-hero h1 { font-size: 3em; }
+        .blog-hero p { font-size: 1.2em; color: #666; max-width: 700px; margin: 10px auto; }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 60px 0;
+        }
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        .post-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); }
+        .post-card img { width: 100%; height: 250px; object-fit: cover; }
+        .post-content { padding: 25px; text-align: left; }
+        .post-content h3 { font-size: 1.5em; margin-bottom: 10px; }
+        .post-content p { color: #555; font-size: 0.95em; line-height: 1.5; }
+        .post-meta { font-size: 0.85em; color: #999; margin-bottom: 15px; }
+        
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">G MOH REALTY | Insights</div>
+        <nav><a href="index.html" class="btn">Back to Home</a></nav>
+    </header>
+
+    <div class="blog-hero">
+        <div class="container">
+            <h1>Honest Insights on Nigerian Real Estate</h1>
+            <p>We believe in telling the truth. Our articles break down market trends, legal complexities, and investment opportunities in Abuja and beyond.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="blog-grid">
+            <div class="post-card">
+                <img src="https://via.placeholder.com/400x250?text=Abuja+Investment+Guide" alt="Abuja Skyline">
+                <div class="post-content">
+                    <div class="post-meta">Land | 5 min read</div>
+                    <h3>5 Things Your Agent Won't Tell You About Buying Prime Land in Abuja</h3>
+                    <p>Uncover the hidden costs and legal pitfalls that most agents gloss over. G Moh's guide to a truly transparent land purchase.</p>
+                    <a href="blog-post.html" class="btn" style="background-color: var(--accent-color); margin-top: 15px;">Read More</a>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <img src="https://via.placeholder.com/400x250?text=Fair+Pricing" alt="Price Chart">
+                <div class="post-content">
+                    <div class="post-meta">Seller Advice | 4 min read</div>
+                    <h3>Why Fair Pricing Leads to Faster, More Profitable Sales (The Turnover Model)</h3>
+                    <p>Learn how our strategy of honest valuation and fair margins delivers better long-term results than inflated prices and slow sales.</p>
+                    <a href="blog-post.html" class="btn" style="background-color: var(--accent-color); margin-top: 15px;">Read More</a>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <img src="https://via.placeholder.com/400x250?text=Luxury+Home+Security" alt="Luxury Home Security">
+                <div class="post-content">
+                    <div class="post-meta">Luxury Homes | 7 min read</div>
+                    <h3>Security vs. Status: Choosing the Right Luxury District in Abuja</h3>
+                    <p>A breakdown of Maitama, Asokoro, and Jabi from a security and investment standpoint, straight from an expert.</p>
+                    <a href="blog-post.html" class="btn" style="background-color: var(--accent-color); margin-top: 15px;">Read More</a>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+</body>
+</html>
