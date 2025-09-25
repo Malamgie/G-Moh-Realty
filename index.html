@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Moh Realty - Your Trusted Partner in Abuja's Luxury Real Estate</title>
+    <style>
+        /* --- G Moh Realty CSS Styling --- */
+        :root {
+            --primary-color: #0c1a3b; /* Navy Blue from Logo */
+            --accent-color: #e5a400; /* Subtle Gold/Yellow for contrast */
+            --light-bg: #f5f5f5;
+            --text-color: #333;
+            --font-serif: 'Times New Roman', serif;
+            --font-sans: 'Arial', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Typography & Headings --- */
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            text-align: center;
+        }
+
+        /* --- Layout & Sections --- */
+        .section {
+            padding: 80px 5% 60px;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+        }
+
+        .logo-container {
+            font-size: 1.5em;
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-left: 20px;
+        }
+        .btn:hover {
+            background-color: #081228;
+            transform: translateY(-2px);
+        }
+
+        /* --- 1. Hero Section --- */
+        #hero {
+            background-image: url('placeholder-hero-image.jpg'); /* Placeholder */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+            height: 100vh;
+            justify-content: flex-end;
+            padding-bottom: 100px;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+        }
+        #hero h1 {
+            font-size: 4em;
+            color: white;
+            max-width: 800px;
+            z-index: 1;
+        }
+        #hero p {
+            font-size: 1.5em;
+            margin-top: 15px;
+            max-width: 700px;
+            z-index: 1;
+        }
+
+        /* --- 2. The G Moh Difference --- */
+        #difference {
+            background-color: var(--light-bg);
+            min-height: auto;
+            padding-top: 100px;
+        }
+        .promise-grid {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin-top: 50px;
+        }
+        .promise-item {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-top: 5px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        .promise-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* --- 3. Featured Properties --- */
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin-top: 50px;
+        }
+        .property-card {
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+            border-radius: 8px;
+        }
+        .property-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .property-info {
+            padding: 15px;
+        }
+        .property-info h4 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .property-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* --- 4. About Us (Narrative Scroll) --- */
+        #about {
+            background-color: var(--primary-color);
+            color: white;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            min-height: 90vh;
+        }
+        #about h2 {
+            color: white;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+        .about-content {
+            display: flex;
+            gap: 50px;
+            max-width: 1200px;
+            align-items: center;
+        }
+        .about-text {
+            flex: 2;
+            text-align: left;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .about-image-container {
+            flex: 1;
+            position: relative;
+        }
+        .about-image-container img {
+            width: 100%;
+            height: auto;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        .quote {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 1.2em;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+        }
+
+        /* --- 5. Contact Us --- */
+        #contact {
+            background-color: white;
+            min-height: 80vh;
+        }
+        .contact-content {
+            display: flex;
+            gap: 50px;
+            max-width: 1000px;
+            margin-top: 50px;
+            text-align: left;
+        }
+        .contact-form-container, .contact-details {
+            flex: 1;
+        }
+        .contact-form-container input, .contact-form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-sans);
+        }
+        .contact-form-container textarea {
+            resize: vertical;
+        }
+        .contact-details p {
+            line-height: 2;
+            font-size: 1.1em;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 5%;
+            font-size: 0.9em;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">G MOH REALTY</div>
+        <nav class="nav-links">
+            <a href="#difference">The Promise</a>
+            <a href="#featured">Listings</a>
+            <a href="#about">Our Story</a>
+            <a href="#contact">Contact</a>
+            <a href="#contact" class="btn">Schedule Consultation</a>
+        </nav>
+    </header>
+
+    <section id="hero" class="section">
+        <h1>Your Trusted Partner in Abuja's Luxury Real Estate.</h1>
+        <p>Fair Prices. Honest Advice. Prime Opportunities. We are raising the standard of trust in property transactions.</p>
+        <a href="#featured" class="btn" style="background-color: var(--accent-color); z-index: 1;">View Prime Listings</a>
+    </section>
+
+    <section id="difference" class="section">
+        <h2>The G Moh Promise: Honesty & Value</h2>
+        <p>We noticed a gap in trust. Our model is built on transparency, fair pricing, and ensuring profitable turnover for everyone.</p>
+        <div class="promise-grid">
+            <div class="promise-item">
+                <h3>100% Transparency</h3>
+                <p>We don't overhype or inflate prices. You get the unvarnished truth about the property's value and potential.</p>
+            </div>
+            <div class="promise-item">
+                <h3>Fair Price, Fast Turnover</h3>
+                <p>Selling fast at a fair price is better for everyone. We prioritize efficiency to maximize value for both buyer and seller.</p>
+            </div>
+            <div class="promise-item">
+                <h3>Abuja Luxury & Prime Land</h3>
+                <p>For the past three years, our focus has been securing the best luxury homes and most valuable prime land opportunities in Abuja.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured" class="section">
+        <h2>Featured Prime Opportunities</h2>
+        <div class="property-grid">
+            <div class="property-card">
+                <img src="placeholder-property-1.jpg" alt="Luxury Villa Abuja">
+                <div class="property-info">
+                    <h4>Luxury Villa - Maitama</h4>
+                    <p>Exclusive 5-bedroom luxury home in a prime, secure district. Verified documentation.</p>
+                    <a href="#contact" class="btn" style="padding: 8px 15px;">Inquire Now</a>
+                </div>
+            </div>
+            <div class="property-card">
+                <img src="placeholder-property-2.jpg" alt="Prime Land Plot">
+                <div class="property-info">
+                    <h4>Prime Land - Jabi District</h4>
+                    <p>Ideal plot for commercial or high-end residential development. High-turnover potential.</p>
+                    <a href="#contact" class="btn" style="padding: 8px 15px;">Inquire Now</a>
+                </div>
+            </div>
+            <div class="property-card">
+                <img src="placeholder-property-3.jpg" alt="Estate Opportunity">
+                <div class="property-info">
+                    <h4>Estate Opportunity - Guzape</h4>
+                    <p>Newly listed plot within a rapidly developing estate community. Excellent investment.</p>
+                    <a href="#contact" class="btn" style="padding: 8px 15px;">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn" style="margin-top: 50px;">View All Listings</a>
+    </section>
+
+    <section id="about" class="section">
+        <h2>The Founder's Vision: Building Trust</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hi, I’m G Moh. I founded G Moh Realty because I saw a major gap: **it was hard to find agents people could truly trust.** I stepped in, armed with natural friendliness and a wide network, to make things different. My commitment is simple: **Honesty.**</p>
+                <p>We don’t just sell property; we share verified opportunities. We’ve served over 13 clients and showcase new opportunities daily on social media, always focusing on **selling fast at a fair price.**</p>
+                <p class="quote">“Inspired by my father’s humility and legacy of helping people, I want to raise the standard in this industry and earn people’s trust every step of the way.”</p>
+                <p>With G Moh Realty, you don’t just buy property—you gain a partner you can rely on. Our vision is to build estates and communities, not just transactions.</p>
+            </div>
+            <div class="about-image-container">
+                <img src="placeholder-gmoh-ceo-photo.jpg" alt="G Moh Realty CEO Photo">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Start Your Honest Conversation</h2>
+        <p>Ready to secure your next luxury home or prime land opportunity? Connect with us directly.</p>
+        <div class="contact-content">
+            <div class="contact-form-container">
+                <h3>Inquire Directly</h3>
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <input type="tel" name="phone" placeholder="Your Phone/WhatsApp Number" required>
+                    <textarea name="message" rows="4" placeholder="I am interested in... (e.g., A prime land plot in Abuja, Selling my luxury home)"></textarea>
+                    <button type="submit" class="btn">Send Inquiry</button>
+                </form>
+            </div>
+            <div class="contact-details">
+                <h3>Connect Instantly</h3>
+                <p>
+                    <strong>Office:</strong> Appointment Only<br>
+                    <strong>Email:</strong> info@gmohrealty.com<br>
+                    <strong>WhatsApp:</strong> +234 800 XXX XXXX (Recommended for fastest response)<br>
+                </p>
+                <div class="social-icons" style="margin-top: 30px;">
+                    <a href="#">[WhatsApp Icon]</a>
+                    <a href="#">[Instagram Icon]</a>
+                    <a href="#">[Facebook Icon]</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 G Moh Realty. All rights reserved. | Raising the standard of trust in Nigerian Real Estate.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Form Submission Handler (Placeholder for a real backend submission)
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for contacting G Moh Realty! We have received your inquiry and will respond via WhatsApp or phone within 24 hours.');
+                // In a production environment, you would use 'fetch' or 'XMLHttpRequest'
+                // to send the form data to a server-side script (e.g., PHP, Node.js)
+                // for actual lead capture and email notification.
+                contactForm.reset();
+            });
+        });
+    </script>
+
+</body>
+</html>
