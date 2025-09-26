@@ -757,6 +757,12 @@
                 contactForm.reset();
             });
         });
+        const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
     </script>
 
     <a href="https://wa.me/2348037899816" target="_blank" class="whatsapp-btn">
