@@ -401,7 +401,7 @@
         }
 
     .nav-links a:hover {
-        color: var(--accent-color);
+        color: white;
     }
         /* Show links when active */
         .nav-links.active {
@@ -626,6 +626,25 @@
       .menu-btn {
         display: none; /* Hide hamburger */
             } 
+        .nav-links {
+    display: flex !important; /* Always visible */
+    position: static !important; /* Reset absolute positioning */
+    flex-direction: row;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .nav-links a {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+
+  .nav-links .btn {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+    } 
 
 </style> 
          <div class="logo-container"><img src="file_00000000697061f5a8f601852dffe8c2.png"></div>
