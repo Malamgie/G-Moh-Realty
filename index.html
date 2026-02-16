@@ -1,810 +1,673 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/x-icon" style="background-color: white;" href="file_00000000697061f5a8f601852dffe8c2.png">
-
-    <title>G Moh Realty - Your Trusted Partner in Abuja's Luxury Real Estate</title>
-    <style>
-        /* --- G Moh Realty CSS Styling --- */
-        :root {
-            --primary-color: #0c1a3b; /* Navy Blue from Logo */
-            --accent-color: #e5a400; /* Subtle Gold/Yellow for contrast */
-            --light-bg: #f5f5f5;
-            --text-color: #333;
-            --font-serif: 'Times New Roman', serif;
-            --font-sans: 'Arial', sans-serif;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            background-color: white;
-            scroll-behavior: smooth;
-        }
-
-        /* --- Typography & Headings --- */
-        h1, h2, h3 {
-            font-family: var(--font-serif);
-            color: var(--primary-color);
-            margin: 0;
-        }
-
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-            text-align: center;
-        }
-
-        /* --- Layout & Sections --- */
-        .section {
-            padding: 80px 5% 60px;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            position: auto;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 5%;
-        }
-        /* Floating WhatsApp Button */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    background-color: #25d366; /* WhatsApp Green */
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out;
-}
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-}
-.whatsapp-btn img {
-    width: 35px;
-    height: 35px;
-}
-
-/* Optional: Add a subtle animation on page load */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.5); }
-    to { opacity: 1; transform: scale(1); }
-}
-.whatsapp-btn {
-    animation: fadeIn 0.5s ease-in-out 1s forwards; /* 1s delay */
-    opacity: 0;
-    }
-
-        .logo-container {
-    font-size: 1.5em; /* header size */
-    font-family: var(--font-serif);
-    color: var(--primary-color);
-    font-weight: bold;
-    display: flex;       /* optional, makes text and image align nicely */
-    align-items: center; /* vertically aligns image with text */
-    gap: 0.5em;          /* space between image and text */
-}
-
-.logo-container img {
-    height: 4em;         /* same as text size (1.5em relative to parent) */
-    width: auto;         /* keep aspect ratio */
-}
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-color);
-            margin: 20px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-        .btn {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.2s;
-            margin-left: 20px;
-        }
-        .btn:hover {
-            background-color: #081228;
-            transform: translateY(-2px);
-        }
-
-        /* --- 1. Hero Section --- */
-        #hero {
-            background-image: url('Gemini_Generated_Image_bvm129bvm129bvm1.png'); /* Placeholder */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-            height: 100vh;
-            justify-content: flex-end;
-            padding-bottom: 100px;
-        }
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-        }
-        #hero h1 {
-            font-size: 4em;
-            color: white;
-            max-width: 800px;
-            z-index: 1;
-        }
-        #hero p {
-            font-size: 1.5em;
-            margin-top: 15px;
-            max-width: 700px;
-            z-index: 1;
-        }
-
-        /* --- 2. The G Moh Difference --- */
-        #difference {
-            background-color: var(--light-bg);
-            min-height: auto;
-            padding-top: 100px;
-        }
-        .promise-grid {
-            display: flex;
-            gap: 30px;
-            max-width: 1200px;
-            margin-top: 50px;
-        }
-        .promise-item {
-            flex: 1;
-            padding: 30px;
-            background: white;
-            border-top: 5px solid var(--accent-color);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            text-align: left;
-        }
-        .promise-item h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        /* --- 3. Featured Properties --- */
-        .property-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin-top: 50px;
-        }
-        .property-card {
-            background: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: left;
-            border-radius: 8px;
-        }
-        .property-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        .property-info {
-            padding: 15px;
-        }
-        .property-info h4 {
-            font-size: 1.2em;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-        .property-info p {
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        /* --- 4. About Us (Narrative Scroll) --- */
-        #about {
-            background-color: var(--primary-color);
-            color: white;
-            padding-top: 100px;
-            padding-bottom: 100px;
-            min-height: 90vh;
-        }
-        #about h2 {
-            color: white;
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 10px;
-            margin-bottom: 40px;
-        }
-        .about-content {
-            display: flex;
-            gap: 50px;
-            max-width: 1200px;
-            align-items: center;
-        }
-        .about-text {
-            flex: 2;
-            text-align: left;
-            line-height: 1.8;
-            font-size: 1.1em;
-        }
-        .about-image-container {
-            flex: 1;
-            position: relative;
-        }
-        .about-image-container img {
-            width: 100%;
-            height: auto;
-            border: 5px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        }
-        .quote {
-            margin-top: 30px;
-            font-style: italic;
-            font-size: 1.2em;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 20px;
-        }
-
-        /* --- 5. Contact Us --- */
-        #contact {
-            background-color: white;
-            min-height: 80vh;
-        }
-        .contact-content {
-            display: flex;
-            gap: 50px;
-            max-width: 1000px;
-            margin-top: 50px;
-            text-align: left;
-        }
-
-</head>
-<body>
-
-    <header>
-  style>
-    /* --- Variables --- */
-    :root {
-        --primary-color: #0c1a3b;
-        --accent-color: #e5a400;
-        --light-bg: #f5f5f5;
-        --text-color: #333;
-        --font-serif: 'Times New Roman', serif;
-        --font-sans: 'Arial', sans-serif;
-    }
-
-    /* --- Global --- */
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: var(--font-sans);
-        margin: 0;
-        padding: 0;
-        color: var(--text-color);
-        background-color: white;
-        scroll-behavior: smooth;
-    }
-
-    h1, h2, h3 {
-        font-family: var(--font-serif);
-        color: var(--primary-color);
-        margin: 0;
-    }
-
-    h2 {
-        font-size: 2em;
-        margin-bottom: 0.5em;
-        text-align: center;
-    }
-
-    /* --- Header --- */
-    header {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        background-color: white;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 5%;
-        z-index: 1000;
-    }
-
-    .logo-container {
-        font-size: 1.5em;
-        font-family: var(--font-serif);
-        color: var(--primary-color);
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        gap: 0.5em;
-    }
-
-    .logo-container img {
-        height: 2em; /* responsive with text size */
-        width: auto;
-    }
-
-    .navbar {
-      background: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-      position: relative;
-    }
-        .menu-btn {
-      font-size: 26px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--primary-color);
-      font-weight: bold;
-      display: block;
-        }
-         .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background: var(--accent-color);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
-         }
-        .nav-links a {
-      text-decoration: none;
-      color: var(--primary-color);
-      margin: 10px 0;
-      font-weight: 600;
-      transition: color 0.3s;
-        }
-        
-      }
-        .nav-links a {
-        margin-left: 20px;
-        margin-top: 0;
-        }
-
-    .nav-links a:hover {
-        color: white;
-    }
-        /* Show links when active */
-        .nav-links.active {
-      display: flex;
-        }
-
-    .btn {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 8px 16px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: 0.3s;
-        margin: 10px;
-        text-color: white;
-    }
-
-    .btn:hover {
-        background-color: #081228;
-        transform: translateY(-2px);
-    }
-
-    /* --- Sections --- */
-    .section {
-        padding: 60px 5%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    /* --- Hero --- */
-    #hero {
-        background-image: url('Gemini_Generated_Image_bvm129bvm129bvm1.png');
-        background-size: cover;
-        background-position: center;
-        color: white;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-        padding: 80px 5%;
-        width: 100%;
-    }
-
-    #hero h1 {
-        font-size: 3em;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    #hero p {
-        font-size: 1.2em;
-        max-width: 700px;
-        margin: 20px auto 0;
-    }
-
-    /* --- Difference / Promise --- */
-    #difference {
-        background-color: var(--light-bg);
-        padding: 60px 5%;
-        width: 100%;
-    }
-
-    .promise-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        max-width: 1200px;
-        margin-top: 40px;
-    }
-
-    .promise-item {
-        flex: 1 1 250px;
-        padding: 20px;
-        background: white;
-        border-top: 5px solid var(--accent-color);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        text-align: left;
-    }
-
-    /* --- Properties --- */
-    .property-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        max-width: 1200px;
-        margin-top: 40px;
-        width: 100%;
-    }
-
-    .property-card {
-        background: white;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        overflow: hidden;
-        border-radius: 8px;
-    }
-
-    .property-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .property-info {
-        padding: 15px;
-    }
-
-    .property-info h4 {
-        font-size: 1.2em;
-        color: var(--primary-color);
-        margin-bottom: 5px;
-    }
-
-    .property-info p {
-        color: #666;
-        font-size: 0.95em;
-        margin-bottom: 10px;
-    }
-
-    /* --- About --- */
-    #about {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 60px 5%;
-        width: 100%;
-    }
-
-    .about-content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .about-text {
-        flex: 1 1 300px;
-        line-height: 1.6;
-        font-size: 1em;
-    }
-
-    .about-image-container {
-        flex: 1 1 250px;
-    }
-
-    .about-image-container img {
-        width: 100%;
-        height: auto;
-        border: 5px solid var(--accent-color);
-        box-shadow: 0 0 20px rgba(255,255,255,0.2);
-    }
-
-    .quote {
-        margin-top: 20px;
-        font-style: italic;
-        font-size: 1.1em;
-        border-left: 4px solid var(--accent-color);
-        padding-left: 15px;
-    }
-
-    /* --- Contact --- */
-    #contact {
-        background-color: white;
-        padding: 60px 5%;
-        width: 100%;
-    }
-
-    .contact-content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .contact-form-container, .contact-details {
-        flex: 1 1 300px;
-    }
-
-    .contact-form-container input, .contact-form-container textarea {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 12px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-family: var(--font-sans);
-        font-size: 1em;
-    }
-        .contact-details p {
-            line-height: 2;
-            font-size: 1.1em;
-        }
-
-    /* --- Footer --- */
-    footer {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 20px 5%;
-        font-size: 0.9em;
-    }
-
-    .social-icons a {
-        color: white;
-        font-size: 1.3em;
-        margin: 0 8px;
-        text-decoration: none;
-    }
-
-    /* --- Responsive Media Queries --- */
-    @media (max-width: 768px) {
-        #hero h1 { font-size: 2em; }
-        #hero p { font-size: 1em; }
-        .about-content { flex-direction: column; }
-        .property-card img { height: 180px; }
-        
-    }
-         /* DESKTOP (≥768px) */
-    @media (min-width: 768px) {
-      .menu-btn {
-        display: none; /* Hide hamburger */
-            } 
-        .nav-links {
-    display: flex !important; /* Always visible */
-    position: static !important; /* Reset absolute positioning */
-    flex-direction: row;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    border-radius: none;
-  }
-
-  .nav-links a {
-    margin-left: 20px;
-    margin-top: 0;
-  }
-
-  .nav-links .btn {
-    margin-left: 20px;
-    margin-top: 0;
-  }
-    } 
-
-</style> 
-    <div class="navbar">
-         <div class="logo-container"><img src="file_00000000697061f5a8f601852dffe8c2.png"></div>
-    <button class="menu-btn">☰</button>
-
-    <nav class="nav-links">
-      <a href="#difference">The Promise</a>
-      <a href="#featured">Listings</a>
-      <a href="#about">Our Story</a>
-      <a href="blog.html">Blog</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" style="text-color: white;" class="btn">Schedule Consultation</a>
-    </nav>
-    </div>
-
-
-    </header>
-
-    <section id="hero" class="section">
-        <h1>Your Trusted Partner in Abuja's Luxury Real Estate.</h1>
-        <p>Fair Prices. Honest Advice. Prime Opportunities. We are raising the standard of trust in property transactions.</p>
-        <a href="#featured" class="btn" style="background-color: var(--accent-color); z-index: 1;">View Prime Listings</a>
-    </section>
-
-    <section id="difference" class="section">
-        <h2>The G Moh Promise: Honesty & Value</h2>
-        <p>We noticed a gap in trust. Our model is built on transparency, fair pricing, and ensuring profitable turnover for everyone.</p>
-        <div class="promise-grid">
-            <div class="promise-item">
-                <h3>100% Transparency</h3>
-                <p>We don't overhype or inflate prices. You get the unvarnished truth about the property's value and potential.</p>
-            </div>
-            <div class="promise-item">
-                <h3>Fair Price, Fast Turnover</h3>
-                <p>Selling fast at a fair price is better for everyone. We prioritize efficiency to maximize value for both buyer and seller.</p>
-            </div>
-            <div class="promise-item">
-                <h3>Abuja Luxury & Prime Land</h3>
-                <p>For the past three years, our focus has been securing the best luxury homes and most valuable prime land opportunities in Abuja.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="featured" class="section">
-        <h2>Featured Prime Opportunities</h2>
-        <div class="property-grid">
-            <div class="property-card">
-                <img src="Gemini_Generated_Image_deie0deie0deie0d.png" alt="Luxury Villa Abuja">
-                <div class="property-info">
-                    <h4>Luxury Villa - Maitama</h4>
-                    <p>Exclusive 5-bedroom luxury home in a prime, secure district. Verified documentation.</p>
-                    <a href="#contact" class="btn" style="padding: 8px 15px;">Inquire Now</a>
-                </div>
-            </div>
-            <div class="property-card">
-                <img src="file_00000000b328624692521ed1f68babf9.png" alt="Prime Land Plot">
-                <div class="property-info">
-                    <h4>Prime Land - Ochacha Estate Life Camp</h4>
-                    <p>300SQM Ideal plot for commercial or high-end residential development.</p>
-                    <a href="#contact" class="btn" style="padding: 8px 15px;">Inquire Now</a>
-                </div>
-            </div>
-            <div class="property-card">
-                <img src="file_00000000ec406243af4bed01919aa6d1.png" alt="Estate Opportunity">
-                <div class="property-info">
-                    <h4>Estate Opportunity - Guzape</h4>
-                    <p>Newly listed plot within a rapidly developing estate community. Excellent investment.</p>
-                    <a href="#contact" class="btn" style="padding: 8px 15px;">Inquire Now</a>
-                </div>
-            </div>
-        </div>
-        <a href="listing-detail.html" class="btn" style="margin-top: 50px;">View All Listings</a>
-    </section>
-
-    <section id="about" class="section">
-        <h2>The Founder's Vision: Building Trust</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Hi, I’m G Moh. I founded G Moh Realty because I saw a major gap: it was hard to find agents people could truly trust. I stepped in, armed with natural friendliness and a wide network, to make things different. My commitment is simple: Honesty.</p>
-                <p>We don’t just sell property; we share verified opportunities. We’ve served over 13 clients and showcase new opportunities daily on social media, always focusing on selling fast at a fair price.</p>
-                <p class="quote">“Inspired by my father’s humility and legacy of helping people, I want to raise the standard in this industry and earn people’s trust every step of the way.”</p>
-                <p>With G Moh Realty, you don’t just buy property—you gain a partner you can rely on. Our vision is to build estates and communities, not just transactions.</p>
-            </div>
-            <div class="about-image-container">
-                <img src="IMG-20250926-WA0005.jpg" alt="G Moh Realty CEO Photo">
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Start Your Honest Conversation</h2>
-        <p>Ready to secure your next luxury home or prime land opportunity? Connect with us directly.</p>
-        <div class="contact-content">
-            <div class="contact-form-container">
-                <h3>Inquire Directly</h3>
-                <form id="contactForm" action="https://formspree.io/f/mkgqbwpd" method="post">
-                    <input type="text" name="name" placeholder="Your Full Name" required>
-                    <input type="email" name="email" placeholder="Your Email Address" required>
-                    <input type="tel" name="phone" placeholder="Your Phone/WhatsApp Number" required>
-                    <textarea name="message" rows="4" placeholder="I am interested in... (e.g., A prime land plot in Abuja, Selling my luxury home)"></textarea>
-                    <button type="submit" class="btn">Send Inquiry</button>
-                </form>
-            </div>
-            <div class="contact-details">
-                <h3>Connect Instantly</h3>
-                <p>
-                    <strong>Office:</strong> Appointment Only<br>
-                    <strong>Email:</strong> muhd.gmoh@gmail.com <br>
-                    <strong>WhatsApp:</strong> +234 8037 8998 16<br>
-                </p>
-                <div class="social-icons" style="margin-top: 30px;">
-                    <a href="https://wa.me/2348037899816 ">[WhatsApp Icon]</a>
-                    <a href="#">[Instagram Icon]</a>
-                    <a href="#">[Facebook Icon]</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 G Moh Realty. All rights reserved. | Raising the standard of trust in Nigerian Real Estate.</p>
-    </footer>
-
+    <title>G Moh Realty | Luxury Real Estate & Private Holdings</title>
+    
+    <!-- Fonts: Playfair Display (Serif) & Montserrat (Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration for Custom Palette -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Form Submission Handler (Placeholder for a real backend submission)
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for contacting G Moh Realty! We have received your inquiry and will respond via WhatsApp or phone within 24 hours.');
-                // In a production environment, you would use 'fetch' or 'XMLHttpRequest'
-                // to send the form data to a server-side script (e.g., PHP, Node.js)
-                // for actual lead capture and email notification.
-                contactForm.reset();
-            });
-        });
-        const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            white: '#F9F8F6',      /* Warm White */
+                            charcoal: '#1A1A1A',   /* Deep Charcoal */
+                            taupe: '#8C8678',      /* Earthy Taupe */
+                            sand: '#D6D2C4',       /* Light Sand */
+                            clay: '#A69F91',       /* Darker Clay */
+                            olive: '#5F6158',      /* Subtle Olive */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'slow-zoom': 'slowZoom 10s linear infinite alternate',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slowZoom: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
     </script>
 
-    <a href="https://wa.me/2348037899816" target="_blank" class="whatsapp-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
-    </a>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F8F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8C8678;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5F6158;
+        }
+
+        /* Utility classes */
+        .glass-panel {
+            background: rgba(249, 248, 246, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(140, 134, 120, 0.2);
+        }
+        
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Hide generic input styling */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+
+        /* Loader */
+        #loader {
+            transition: opacity 0.6s ease-out, visibility 0.6s;
+        }
+    </style>
+</head>
+<body class="bg-brand-white text-brand-charcoal font-sans antialiased overflow-x-hidden">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-brand-white">
+        <div class="text-center animate-pulse">
+            <h1 class="font-serif text-3xl tracking-widest text-brand-charcoal mb-2">G MOH REALTY</h1>
+            <p class="text-xs tracking-[0.3em] text-brand-taupe uppercase">Estates & Holdings</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-40 transition-all duration-300 py-6 px-6 md:px-12 flex justify-between items-center group hover:bg-brand-white/95 hover:shadow-sm">
+        <a href="#" onclick="showHome()" class="z-50 relative">
+            <div class="flex flex-col">
+                <span class="font-serif text-2xl font-semibold tracking-wide text-brand-charcoal">G Moh</span>
+                <span class="text-[10px] tracking-[0.2em] text-brand-taupe uppercase">Realty Group</span>
+            </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-12">
+            <a href="#properties" class="text-sm tracking-widest hover:text-brand-taupe transition-colors">RESIDENCES</a>
+            <a href="#about" class="text-sm tracking-widest hover:text-brand-taupe transition-colors">THE FIRM</a>
+            <a href="#agents" class="text-sm tracking-widest hover:text-brand-taupe transition-colors">AGENTS</a>
+            <button onclick="scrollToContact()" class="border border-brand-charcoal px-6 py-2 text-xs tracking-widest hover:bg-brand-charcoal hover:text-brand-white transition-all duration-300">
+                PRIVATE VIEWING
+            </button>
+        </div>
+
+        <!-- Mobile Menu Icon -->
+        <button class="md:hidden z-50 text-brand-charcoal" onclick="toggleMobileMenu()">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-white z-40 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center space-y-8">
+        <a href="#properties" onclick="toggleMobileMenu()" class="font-serif text-3xl text-brand-charcoal hover:text-brand-taupe">Residences</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="font-serif text-3xl text-brand-charcoal hover:text-brand-taupe">The Firm</a>
+        <a href="#agents" onclick="toggleMobileMenu()" class="font-serif text-3xl text-brand-charcoal hover:text-brand-taupe">Agents</a>
+        <button onclick="toggleMobileMenu(); scrollToContact()" class="text-brand-taupe tracking-widest text-sm border-b border-brand-taupe pb-1">REQUEST CONSULTATION</button>
+    </div>
+
+    <!-- Main View (Home) -->
+    <div id="main-view" class="transition-opacity duration-500">
+        
+        <!-- Hero Section -->
+        <header class="relative h-screen w-full overflow-hidden">
+            <div class="absolute inset-0 bg-black/20 z-10"></div>
+            <!-- Background Image -->
+            <img src="https://images.unsplash.com/photo-1600596542815-2a4d9f6facb8?q=80&w=2674&auto=format&fit=crop" 
+                 class="absolute inset-0 w-full h-full object-cover animate-slow-zoom" 
+                 alt="Luxury Interior">
+            
+            <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+                <span class="text-brand-white/90 tracking-[0.3em] text-xs md:text-sm uppercase mb-6 animate-slide-up" style="animation-delay: 0.2s;">Curated Living</span>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-white mb-8 tracking-tight animate-slide-up text-shadow-sm" style="animation-delay: 0.4s;">
+                    Art of the Estate
+                </h1>
+                
+                <!-- Search/Filter Bar -->
+                <div class="bg-brand-white/95 p-4 md:p-6 shadow-2xl max-w-4xl w-full mx-auto flex flex-col md:flex-row gap-4 items-center animate-slide-up rounded-sm" style="animation-delay: 0.6s;">
+                    <div class="flex-1 w-full md:w-auto border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:pr-4">
+                        <label class="block text-[10px] uppercase tracking-wider text-brand-taupe mb-1">Location</label>
+                        <select id="location-filter" class="w-full bg-transparent font-serif text-lg focus:outline-none text-brand-charcoal">
+                            <option value="all">All Locations</option>
+                            <option value="beverly-hills">Beverly Hills</option>
+                            <option value="manhattan">Manhattan, NY</option>
+                            <option value="miami">Miami Beach</option>
+                            <option value="aspen">Aspen</option>
+                        </select>
+                    </div>
+                    <div class="flex-1 w-full md:w-auto border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:pr-4">
+                        <label class="block text-[10px] uppercase tracking-wider text-brand-taupe mb-1">Property Type</label>
+                        <select id="type-filter" class="w-full bg-transparent font-serif text-lg focus:outline-none text-brand-charcoal">
+                            <option value="all">Any Type</option>
+                            <option value="villa">Modern Villa</option>
+                            <option value="penthouse">Penthouse</option>
+                            <option value="estate">Private Estate</option>
+                        </select>
+                    </div>
+                    <div class="flex-1 w-full md:w-auto pb-2 md:pb-0 md:pr-4">
+                        <label class="block text-[10px] uppercase tracking-wider text-brand-taupe mb-1">Price Range</label>
+                        <select id="price-filter" class="w-full bg-transparent font-serif text-lg focus:outline-none text-brand-charcoal">
+                            <option value="all">Any Price</option>
+                            <option value="5m">Up to $5M</option>
+                            <option value="10m">$5M - $15M</option>
+                            <option value="high">$15M+</option>
+                        </select>
+                    </div>
+                    <button onclick="filterProperties()" class="w-full md:w-auto bg-brand-charcoal text-brand-white px-8 py-4 hover:bg-brand-olive transition-colors duration-300">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Properties -->
+        <section id="properties" class="py-24 px-6 md:px-12 bg-brand-white">
+            <div class="flex justify-between items-end mb-16 max-w-7xl mx-auto">
+                <div>
+                    <span class="text-brand-taupe tracking-widest text-xs uppercase block mb-2">Portfolio</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal">Selected Residences</h2>
+                </div>
+                <div class="hidden md:block">
+                    <button class="text-sm tracking-widest border-b border-brand-charcoal pb-1 hover:text-brand-taupe hover:border-brand-taupe transition-all">VIEW ALL HOLDINGS</button>
+                </div>
+            </div>
+
+            <!-- Property Grid -->
+            <div id="property-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 max-w-7xl mx-auto">
+                <!-- Javascript will inject cards here -->
+            </div>
+        </section>
+
+        <!-- The Firm / About -->
+        <section id="about" class="py-24 bg-brand-sand/20">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop" class="w-full h-[600px] object-cover" alt="Building Architecture">
+                        <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-brand-charcoal p-8 hidden md:flex flex-col justify-center text-brand-white">
+                            <span class="text-4xl font-serif block mb-2">15+</span>
+                            <span class="text-sm tracking-widest opacity-80">YEARS OF EXCELLENCE</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-brand-taupe tracking-widest text-xs uppercase block mb-4">The Firm</span>
+                        <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal mb-8 leading-tight">Architecture of <br> a Deal</h2>
+                        <p class="font-sans font-light text-brand-charcoal/80 mb-6 leading-relaxed">
+                            G Moh Realty represents the pinnacle of luxury real estate. We are not just agents; we are curators of a lifestyle. Founded on the principles of discretion, integrity, and exceptional market intelligence, we connect the world's most discerning buyers with architectural masterpieces.
+                        </p>
+                        <p class="font-sans font-light text-brand-charcoal/80 mb-10 leading-relaxed">
+                            Our portfolio is strictly vetted. We believe that true luxury is quiet, effortless, and timeless. Whether seeking a coastal retreat or an urban sanctuary, our team provides an experience that is as seamless as it is exclusive.
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full grayscale opacity-80" alt="Founder">
+                            <div>
+                                <p class="font-serif text-lg">Gabriel Moh</p>
+                                <p class="text-xs tracking-widest text-brand-taupe uppercase">Founder & Principal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agents -->
+        <section id="agents" class="py-24 px-6 md:px-12 bg-brand-white">
+            <div class="max-w-7xl mx-auto text-center mb-16">
+                <span class="text-brand-taupe tracking-widest text-xs uppercase block mb-2">Our Team</span>
+                <h2 class="font-serif text-4xl text-brand-charcoal">Private Client Advisors</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Agent 1 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2574&auto=format&fit=crop" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-1 text-brand-charcoal">James Sterling</h3>
+                    <p class="text-xs uppercase tracking-widest text-brand-taupe">Senior Partner</p>
+                </div>
+                <!-- Agent 2 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-1 text-brand-charcoal">Elena Vance</h3>
+                    <p class="text-xs uppercase tracking-widest text-brand-taupe">Director of Estates</p>
+                </div>
+                <!-- Agent 3 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2574&auto=format&fit=crop" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-1 text-brand-charcoal">Marcus Chen</h3>
+                    <p class="text-xs uppercase tracking-widest text-brand-taupe">Investment Specialist</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-brand-charcoal text-brand-white pt-24 pb-12 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-brand-white/10 pb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <h2 class="font-serif text-3xl mb-6">G Moh Realty.</h2>
+                    <p class="font-light text-brand-white/60 max-w-md mb-8">
+                        Redefining the standard of luxury living. We provide an exclusive gateway to the world's most coveted properties.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-brand-white/60 hover:text-brand-taupe transition-colors"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="text-brand-white/60 hover:text-brand-taupe transition-colors"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="text-brand-white/60 hover:text-brand-taupe transition-colors"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold tracking-widest uppercase mb-6 text-brand-taupe">Offices</h4>
+                    <ul class="space-y-4 font-light text-brand-white/80">
+                        <li>Beverly Hills, CA</li>
+                        <li>SoHo, New York</li>
+                        <li>Miami Beach, FL</li>
+                        <li>London, UK</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold tracking-widest uppercase mb-6 text-brand-taupe">Contact</h4>
+                    <ul class="space-y-4 font-light text-brand-white/80">
+                        <li>inquire@gmohrealty.com</li>
+                        <li>+1 (310) 555-0199</li>
+                        <li><a href="#" class="hover:text-brand-taupe underline decoration-brand-taupe underline-offset-4">Press Inquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between text-xs text-brand-white/40 tracking-wider">
+                <p>&copy; 2024 G Moh Realty Group. All rights reserved.</p>
+                <div class="flex space-x-8 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-white">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Detail View (Initially Hidden) -->
+    <div id="detail-view" class="fixed inset-0 bg-brand-white z-50 overflow-y-auto hidden opacity-0 transition-opacity duration-500">
+        <!-- Close Button -->
+        <button onclick="closeProperty()" class="fixed top-6 right-6 z-50 bg-brand-white/80 p-3 rounded-full hover:bg-brand-charcoal hover:text-brand-white transition-all shadow-lg backdrop-blur-md">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Detail Content Container -->
+        <div id="detail-content" class="min-h-screen">
+            <!-- Injected by JS -->
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // State
+        const state = {
+            favorites: new Set(),
+            currentProperty: null,
+            properties: [
+                {
+                    id: 1,
+                    title: "The Obsidian Villa",
+                    location: "Beverly Hills, CA",
+                    type: "villa",
+                    price: 18500000,
+                    beds: 6,
+                    baths: 7.5,
+                    sqft: 8500,
+                    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop",
+                    description: "A masterwork of modern minimalism perched above the city lights. Featuring floor-to-ceiling glass walls, an infinity edge pool that blends into the horizon, and a private wellness center. The interiors feature imported Italian travertine and custom walnut millwork.",
+                    features: ["Infinity Pool", "Home Theater", "Wine Cellar", "Smart Home System", "Wellness Center"]
+                },
+                {
+                    id: 2,
+                    title: "Penthouse at The Archer",
+                    location: "Manhattan, NY",
+                    type: "penthouse",
+                    price: 12750000,
+                    beds: 3,
+                    baths: 3.5,
+                    sqft: 4200,
+                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2670&auto=format&fit=crop",
+                    description: "Experience the pinnacle of urban living. This triplex penthouse offers 360-degree views of the skyline and Central Park. Includes a private rooftop terrace, chef's kitchen with Gaggenau appliances, and direct elevator access.",
+                    features: ["Private Rooftop", "Concierge", "Central Park Views", "Private Elevator", "Gym"]
+                },
+                {
+                    id: 3,
+                    title: "Coastal Sanctuary",
+                    location: "Miami Beach, FL",
+                    type: "estate",
+                    price: 24000000,
+                    beds: 8,
+                    baths: 9,
+                    sqft: 11000,
+                    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2653&auto=format&fit=crop",
+                    description: "Direct oceanfront estate designed for the ultimate entertainer. 100 feet of private beach frontage. The property includes a guest house, boat dock, and lush tropical landscaping providing complete privacy.",
+                    features: ["Private Beach", "Boat Dock", "Guest House", "Summer Kitchen", "Spa"]
+                },
+                {
+                    id: 4,
+                    title: "Alpine Modern",
+                    location: "Aspen, CO",
+                    type: "estate",
+                    price: 9800000,
+                    beds: 5,
+                    baths: 6,
+                    sqft: 6200,
+                    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2565&auto=format&fit=crop",
+                    description: "Ski-in, ski-out luxury defined. This architectural gem features raw concrete walls softened by warm cedar accents. Floor-to-ceiling windows frame the mountain peaks.",
+                    features: ["Ski-in/Ski-out", "Heated Driveway", "Sauna", "Fire Pit", "Vaulted Ceilings"]
+                },
+                {
+                    id: 5,
+                    title: "Desert Horizon",
+                    location: "Joshua Tree, CA",
+                    type: "villa",
+                    price: 4200000,
+                    beds: 3,
+                    baths: 3,
+                    sqft: 3100,
+                    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=2680&auto=format&fit=crop",
+                    description: "An off-grid masterpiece that disappears into the landscape. Mirrored exterior walls reflect the desert surroundings. Completely sustainable luxury living with zero compromise on comfort.",
+                    features: ["Solar Power", "Sustainable Design", "Star Gazing Deck", "Plunge Pool"]
+                },
+                {
+                    id: 6,
+                    title: "The Glass House",
+                    location: "Beverly Hills, CA",
+                    type: "villa",
+                    price: 15900000,
+                    beds: 5,
+                    baths: 6,
+                    sqft: 7000,
+                    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2574&auto=format&fit=crop",
+                    description: "Transparency and light characterize this iconic property. Every room opens to the outdoors, blurring the lines between nature and structure. Includes an art gallery hallway and subterranean garage.",
+                    features: ["Art Gallery", "Subterranean Garage", "Koi Pond", "Smart Security"]
+                }
+            ]
+        };
+
+        // DOM Elements
+        const grid = document.getElementById('property-grid');
+        const detailView = document.getElementById('detail-view');
+        const mainView = document.getElementById('main-view');
+        const detailContent = document.getElementById('detail-content');
+        const loader = document.getElementById('loader');
+
+        // Initialization
+        window.addEventListener('load', () => {
+            lucide.createIcons();
+            renderProperties(state.properties);
+            
+            // Remove loader
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.visibility = 'hidden'; }, 600);
+            }, 1500);
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-brand-white/95', 'shadow-sm');
+                nav.classList.remove('py-6');
+                nav.classList.add('py-4');
+            } else {
+                nav.classList.remove('bg-brand-white/95', 'shadow-sm', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('translate-x-full');
+        }
+
+        // Format Currency
+        const formatPrice = (price) => {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(price);
+        };
+
+        // Render Properties
+        function renderProperties(properties) {
+            grid.innerHTML = '';
+            
+            if(properties.length === 0) {
+                grid.innerHTML = `<div class="col-span-3 text-center py-20 opacity-50"><p class="font-serif text-2xl">No residences found matching your criteria.</p></div>`;
+                return;
+            }
+
+            properties.forEach((prop, index) => {
+                const card = document.createElement('div');
+                card.className = 'group cursor-pointer opacity-0 animate-slide-up';
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-[4/5] mb-6" onclick="openProperty(${prop.id})">
+                        <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                        <div class="absolute bottom-6 left-6 text-brand-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
+                            <span class="text-xs tracking-widest uppercase border-b border-brand-white pb-1">View Residence</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-serif text-2xl text-brand-charcoal mb-1 group-hover:text-brand-taupe transition-colors">${prop.title}</h3>
+                            <p class="text-sm text-brand-olive font-light">${prop.location}</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold text-brand-charcoal font-serif">${formatPrice(prop.price)}</p>
+                            <p class="text-xs text-brand-olive uppercase tracking-wider">${prop.beds} BD | ${prop.baths} BA</p>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        // Filter Logic
+        function filterProperties() {
+            const location = document.getElementById('location-filter').value;
+            const type = document.getElementById('type-filter').value;
+            const price = document.getElementById('price-filter').value;
+
+            let filtered = state.properties.filter(prop => {
+                const matchLoc = location === 'all' || prop.location.toLowerCase().includes(location.split('-')[0]); // Simple fuzzy match
+                const matchType = type === 'all' || prop.type === type;
+                
+                let matchPrice = true;
+                if (price === '5m') matchPrice = prop.price <= 5000000;
+                else if (price === '10m') matchPrice = prop.price > 5000000 && prop.price <= 15000000;
+                else if (price === 'high') matchPrice = prop.price > 15000000;
+
+                return matchLoc && matchType && matchPrice;
+            });
+
+            renderProperties(filtered);
+            document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mortgage Calculator Logic
+        function calculateMortgage(price) {
+            const principal = price * 0.8; // Assuming 20% down
+            const interest = 0.045 / 12; // 4.5% annual rate
+            const payments = 30 * 12; // 30 years
+            
+            const x = Math.pow(1 + interest, payments);
+            const monthly = (principal * x * interest) / (x - 1);
+            
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(monthly);
+        }
+
+        // Open Property Detail
+        function openProperty(id) {
+            const prop = state.properties.find(p => p.id === id);
+            state.currentProperty = prop;
+
+            // HTML for Detail View
+            detailContent.innerHTML = `
+                <div class="relative h-[80vh] w-full">
+                    <img src="${prop.image}" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 md:p-16 text-brand-white">
+                        <div class="max-w-7xl mx-auto animate-slide-up">
+                            <span class="text-sm tracking-[0.2em] uppercase text-brand-taupe mb-2 block">Exclusive Listing</span>
+                            <h1 class="font-serif text-5xl md:text-7xl mb-4">${prop.title}</h1>
+                            <p class="text-xl font-light opacity-90">${prop.location}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-8">
+                        <div class="flex flex-wrap gap-8 mb-12 border-b border-gray-200 pb-8">
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-brand-taupe">Price</span>
+                                <span class="font-serif text-2xl text-brand-charcoal">${formatPrice(prop.price)}</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-brand-taupe">Living Area</span>
+                                <span class="font-serif text-2xl text-brand-charcoal">${prop.sqft.toLocaleString()} Sq Ft</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-brand-taupe">Bedrooms</span>
+                                <span class="font-serif text-2xl text-brand-charcoal">${prop.beds}</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-brand-taupe">Bathrooms</span>
+                                <span class="font-serif text-2xl text-brand-charcoal">${prop.baths}</span>
+                            </div>
+                        </div>
+
+                        <h3 class="font-serif text-3xl mb-6 text-brand-charcoal">The Residence</h3>
+                        <p class="font-sans font-light text-lg text-brand-charcoal/80 leading-relaxed mb-12">
+                            ${prop.description}
+                        </p>
+
+                        <h3 class="font-serif text-2xl mb-6 text-brand-charcoal">Key Features</h3>
+                        <div class="grid grid-cols-2 gap-4 mb-16">
+                            ${prop.features.map(feat => `
+                                <div class="flex items-center space-x-2 text-brand-charcoal/70">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-taupe"></i>
+                                    <span class="font-light">${feat}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="lg:col-span-4 space-y-8">
+                        <!-- Agent Card -->
+                        <div class="bg-brand-white border border-gray-100 p-8 shadow-sm">
+                            <div class="flex items-center space-x-4 mb-6">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2574&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover grayscale">
+                                <div>
+                                    <h4 class="font-serif text-lg">James Sterling</h4>
+                                    <p class="text-xs text-brand-taupe uppercase tracking-widest">Listing Agent</p>
+                                </div>
+                            </div>
+                            <button class="w-full bg-brand-charcoal text-brand-white py-4 mb-3 hover:bg-brand-olive transition-colors text-xs tracking-widest uppercase">
+                                Schedule Viewing
+                            </button>
+                            <!-- Styled WhatsApp Button -->
+                            <button class="w-full border border-brand-olive text-brand-olive py-4 hover:bg-brand-olive hover:text-brand-white transition-colors text-xs tracking-widest uppercase flex justify-center items-center gap-2">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Inquiry
+                            </button>
+                        </div>
+
+                        <!-- Mortgage Estimator -->
+                        <div class="bg-brand-sand/20 p-8">
+                            <h4 class="font-serif text-xl mb-4">Investment Est.</h4>
+                            <div class="flex justify-between mb-2 text-sm text-brand-charcoal/70">
+                                <span>Monthly (Est.)</span>
+                                <span class="font-bold text-brand-charcoal">${calculateMortgage(prop.price)}</span>
+                            </div>
+                            <p class="text-[10px] text-brand-charcoal/50 leading-tight">*Based on 20% down, 4.5% fixed 30yr. Not an offer of lending.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            lucide.createIcons();
+            
+            // Animation for transition
+            mainView.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                detailView.classList.remove('hidden');
+                // Trigger reflow
+                void detailView.offsetWidth; 
+                detailView.classList.remove('opacity-0');
+            }, 300);
+            
+            // Lock body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Property
+        function closeProperty() {
+            detailView.classList.add('opacity-0');
+            setTimeout(() => {
+                detailView.classList.add('hidden');
+                mainView.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'auto';
+            }, 500);
+            state.currentProperty = null;
+        }
+
+        // Show Home (Reset)
+        function showHome() {
+            if(state.currentProperty) closeProperty();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToContact() {
+            const footer = document.querySelector('footer');
+            footer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+    </script>
 </body>
 </html>
