@@ -435,14 +435,14 @@
         const loader = document.getElementById('loader');
 
         // Initialization
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {  
         lucide.createIcons();  
         renderProperties(state.properties);  
             // Remove loader
             setTimeout(() => {
                 loader.style.opacity = '0';
-                setTimeout(() => { loader.style.visibility = 'hidden'; }, 600);
-            }, 1500);
+                setTimeout(() => { loader.style.visibility = 'hidden'; }, 100);
+            }, 100);
         });
 
         // Navbar Scroll Effect
