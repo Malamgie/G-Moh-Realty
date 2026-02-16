@@ -435,9 +435,21 @@
         const loader = document.getElementById('loader');
 
         // Initialization
-        window.addEventListener('load', () => {
-            lucide.createIcons();
-            renderProperties(state.properties);
+        document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+    renderProperties(state.properties);
+
+    // Smooth fade out
+    setTimeout(() => {
+        loader.classList.add('opacity-0');
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 600);
+    }, 800);
+});
+        setTimeout(() => {
+    loader.style.display = 'none';
+}, 5000);
             
             // Remove loader
             setTimeout(() => {
