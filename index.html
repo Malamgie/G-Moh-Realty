@@ -100,7 +100,7 @@
         /* Loader */
         #loader {
             transition: opacity 0.6s ease-out, visibility 0.6s;
-            display: none; 
+           
         }
     </style>
 </head>
@@ -436,7 +436,7 @@
         const loader = document.getElementById('loader');
 
         // Initialization
-        document.addEventListener('DOMContentLoaded', () => {  
+        document.addEventListener('loader', () => {  
         lucide.createIcons();  
         renderProperties(state.properties);  
             // Remove loader
