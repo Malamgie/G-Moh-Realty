@@ -436,7 +436,7 @@
         const loader = document.getElementById('loader');
 
         // Initialization
-        document.addEventListener('loader', () => {  
+        window.addEventListener('load', () => {
         lucide.createIcons();  
         renderProperties(state.properties);  
             // Remove loader
