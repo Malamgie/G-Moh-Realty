@@ -97,17 +97,15 @@
             margin: 0; 
         }
 
-        /* Loader */
+        /* Loader Styles */
         #loader {
-            transition: opacity 0.6s ease-out, visibility 0.6s;
-           
+            transition: opacity 0.5s ease-out, visibility 0.5s;
         }
-                .loader-hidden {
-                                opacity: 0;
+        .loader-hidden {
+            opacity: 0;
             visibility: hidden;
             pointer-events: none;
-                } 
-
+        }
     </style>
 </head>
 <body class="bg-brand-white text-brand-charcoal font-sans antialiased overflow-x-hidden">
@@ -118,7 +116,7 @@
             <h1 class="font-serif text-3xl tracking-widest text-brand-charcoal mb-2">G MOH REALTY</h1>
             <p class="text-xs tracking-[0.3em] text-brand-taupe uppercase">Estates & Holdings</p>
         </div>
-    </div> 
+    </div>8
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-40 transition-all duration-300 py-6 px-6 md:px-12 flex justify-between items-center group hover:bg-brand-white/95 hover:shadow-sm">
@@ -157,29 +155,33 @@
     <div id="main-view" class="transition-opacity duration-500">
         
         <!-- Hero Section -->
-        <header class="relative h-screen w-full overflow-hidden">
-            <div class="absolute inset-0 bg-black/20 z-10"></div>
+        <!-- CHANGED: Reduced height from h-screen to h-[70vh] (mobile) and h-[80vh] (desktop) -->
+        <header class="relative h-[70vh] md:h-[80vh] w-full overflow-hidden bg-brand-charcoal">
+            <div class="absolute inset-0 bg-black/30 z-10"></div>
             <!-- Background Image -->
-            <img src="images.jpeg w=1920" 
+            <!-- CHANGED: Reduced image width query from w=2674 to w=1920 for faster loading -->
+            <img src="https://images.unsplash.com/photo-1600596542815-2a4d9f6facb8?q=80&w=1920&auto=format&fit=crop" 
                  class="absolute inset-0 w-full h-full object-cover animate-slow-zoom" 
-                 alt="Luxury Interior">
+                 alt="Luxury Interior"
+                 loading="eager">
             
-            <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+            <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 pb-20">
                 <span class="text-brand-white/90 tracking-[0.3em] text-xs md:text-sm uppercase mb-6 animate-slide-up" style="animation-delay: 0.2s;">Curated Living</span>
                 <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-brand-white mb-8 tracking-tight animate-slide-up text-shadow-sm" style="animation-delay: 0.4s;">
                     Art of the Estate
                 </h1>
                 
                 <!-- Search/Filter Bar -->
-                <div class="bg-brand-white/95 p-4 md:p-6 shadow-2xl max-w-4xl w-full mx-auto flex flex-col md:flex-row gap-4 items-center animate-slide-up rounded-sm" style="animation-delay: 0.6s;">
+                <!-- Adjusted margin-top to separate from title slightly more due to reduced height -->
+                <div class="bg-brand-white/95 p-4 md:p-6 shadow-2xl max-w-4xl w-full mx-auto flex flex-col md:flex-row gap-4 items-center animate-slide-up rounded-sm mt-8" style="animation-delay: 0.6s;">
                     <div class="flex-1 w-full md:w-auto border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:pr-4">
                         <label class="block text-[10px] uppercase tracking-wider text-brand-taupe mb-1">Location</label>
                         <select id="location-filter" class="w-full bg-transparent font-serif text-lg focus:outline-none text-brand-charcoal">
                             <option value="all">All Locations</option>
-                            <option value="beverly-hills">Banana Island</option>
-                            <option value="manhattan">Asocoro, ABJ</option>
-                            <option value="miami">Lekki Phase 1</option>
-                            <option value="aspen">Maitama, ABJ</option>
+                            <option value="beverly-hills">Beverly Hills</option>
+                            <option value="manhattan">Manhattan, NY</option>
+                            <option value="miami">Miami Beach</option>
+                            <option value="aspen">Aspen</option>
                         </select>
                     </div>
                     <div class="flex-1 w-full md:w-auto border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:pr-4">
@@ -195,9 +197,9 @@
                         <label class="block text-[10px] uppercase tracking-wider text-brand-taupe mb-1">Price Range</label>
                         <select id="price-filter" class="w-full bg-transparent font-serif text-lg focus:outline-none text-brand-charcoal">
                             <option value="all">Any Price</option>
-                            <option value="5m">Up to ₦500M</option>
-                            <option value="10m">₦500M - ₦1.5B</option>
-                            <option value="high">₦1.5B+</option>
+                            <option value="5m">Up to ₦5B</option>
+                            <option value="10m">₦5B - ₦15B</option>
+                            <option value="high">₦15B+</option>
                         </select>
                     </div>
                     <button onclick="filterProperties()" class="w-full md:w-auto bg-brand-charcoal text-brand-white px-8 py-4 hover:bg-brand-olive transition-colors duration-300">
@@ -230,9 +232,9 @@
             <div class="max-w-7xl mx-auto px-6 md:px-12">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop" class="w-full h-[600px] object-cover" alt="Building Architecture">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop" class="w-full h-[600px] object-cover" alt="Building Architecture">
                         <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-brand-charcoal p-8 hidden md:flex flex-col justify-center text-brand-white">
-                            <span class="text-4xl font-serif block mb-2">10+</span>
+                            <span class="text-4xl font-serif block mb-2">15+</span>
                             <span class="text-sm tracking-widest opacity-80">YEARS OF EXCELLENCE</span>
                         </div>
                     </div>
@@ -246,9 +248,9 @@
                             Our portfolio is strictly vetted. We believe that true luxury is quiet, effortless, and timeless. Whether seeking a coastal retreat or an urban sanctuary, our team provides an experience that is as seamless as it is exclusive.
                         </p>
                         <div class="flex items-center space-x-4">
-                            <img src="gmoh.jpg" class="w-12 h-12 rounded-full grayscale opacity-80" alt="Founder">
+                            <img loading="lazy" src="gmoh.jpg" class="w-12 h-12 rounded-full grayscale opacity-80" alt="Founder">
                             <div>
-                                <p class="font-serif text-lg">Muhammad Garba Musa</p>
+                                <p class="font-serif text-lg">Muhammad Garba Musa </p>
                                 <p class="text-xs tracking-widest text-brand-taupe uppercase">Founder & Principal</p>
                             </div>
                         </div>
@@ -267,7 +269,7 @@
                 <!-- Agent 1 -->
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden mb-6 relative">
-                        <img src="bs.jpg" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
+                        <img loading="lazy" src="bs.jpg" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
                     </div>
                     <h3 class="font-serif text-2xl mb-1 text-brand-charcoal">Abubakar Garba Musa</h3>
                     <p class="text-xs uppercase tracking-widest text-brand-taupe">Senior Partner</p>
@@ -275,7 +277,7 @@
                 <!-- Agent 2 -->
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden mb-6 relative">
-                        <img src="ni.jpg" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
+                        <img loading="lazy" src="ni.jpg" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
                     </div>
                     <h3 class="font-serif text-2xl mb-1 text-brand-charcoal">Aliyu Garba Musa</h3>
                     <p class="text-xs uppercase tracking-widest text-brand-taupe">Listing Agent</p>
@@ -283,7 +285,7 @@
                 <!-- Agent 3 -->
                 <div class="group cursor-pointer">
                     <div class="overflow-hidden mb-6 relative">
-                        <img src="ugm.jpg" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
+                        <img loading="lazy" src="ugm.jpg" class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" alt="Agent">
                     </div>
                     <h3 class="font-serif text-2xl mb-1 text-brand-charcoal">Umar Garba Musa</h3>
                     <p class="text-xs uppercase tracking-widest text-brand-taupe">Investment Specialist</p>
@@ -308,17 +310,18 @@
                 <div>
                     <h4 class="text-xs font-bold tracking-widest uppercase mb-6 text-brand-taupe">Offices</h4>
                     <ul class="space-y-4 font-light text-brand-white/80">
-                        <li>No. 07 3B, Plaza 3rd avenue</li>
-                        <li> Gwarinpa Abuja, NG</li>
+                        <li>No. 07 3B Plaza 3rd avenue,</li>
+                        <li>Gwarimpa</li>
+                        <li>Abuja, NG</li>
                         <li>Nassarawa Jahun</li>
-                        <li>Bauchi, NG</li>
+                        <li>Bauchi , NG</li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-xs font-bold tracking-widest uppercase mb-6 text-brand-taupe">Contact</h4>
                     <ul class="space-y-4 font-light text-brand-white/80">
                         <li>gmohnet@gmail.com</li>
-                        <li>+234 (813) 7899816</li>
+                        <li>+234 (803) 789-9816</li>
                         <li><a href="#" class="hover:text-brand-taupe underline decoration-brand-taupe underline-offset-4">Press Inquiries</a></li>
                     </ul>
                 </div>
@@ -356,7 +359,7 @@
                 {
                     id: 1,
                     title: "The Obsidian Villa",
-                    location: "Lekki , CA",
+                    location: "Assocoro , ABJ",
                     type: "villa",
                     price: 18500000000,
                     beds: 6,
@@ -369,7 +372,7 @@
                 {
                     id: 2,
                     title: "Penthouse at The Archer",
-                    location: "Maitama, Abj",
+                    location: "Maitama , ABJ",
                     type: "penthouse",
                     price: 12750000000,
                     beds: 3,
@@ -382,7 +385,7 @@
                 {
                     id: 3,
                     title: "Coastal Sanctuary",
-                    location: "Lekki, P1",
+                    location: "Miami Beach, FL",
                     type: "estate",
                     price: 24000000000,
                     beds: 8,
@@ -395,7 +398,7 @@
                 {
                     id: 4,
                     title: "Alpine Modern",
-                    location: "Lekki, CO",
+                    location: "Banana Island , LGS",
                     type: "estate",
                     price: 9800000000,
                     beds: 5,
@@ -408,7 +411,7 @@
                 {
                     id: 5,
                     title: "Desert Horizon",
-                    location: "Assocoro , CA",
+                    location: "Banana Island, LGS",
                     type: "villa",
                     price: 4200000000,
                     beds: 3,
@@ -421,9 +424,9 @@
                 {
                     id: 6,
                     title: "The Glass House",
-                    location: "Maitama , CA",
+                    location: "Lekki P1, LGS",
                     type: "villa",
-                    price: 15900000000,
+                    price: 1590000000,
                     beds: 5,
                     baths: 6,
                     sqft: 7000,
@@ -441,16 +444,41 @@
         const detailContent = document.getElementById('detail-content');
         const loader = document.getElementById('loader');
 
-        // Initialization
-        window.addEventListener('load', () => {
-        lucide.createIcons();  
-        renderProperties(state.properties);  
-            // Remove loader
+        // ROBUST LOADER REMOVAL LOGIC
+        // This function handles safe removal regardless of how it's called
+        function hideLoader() {
+            if (!loader || loader.classList.contains('loader-hidden')) return;
+            
+            // Add utility class to fade out and hide pointer events
+            loader.classList.add('loader-hidden');
+            
+            // Force display none after transition just to be safe
             setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => { loader.style.visibility = 'hidden'; }, 100);
-            }, 100);
-        });
+                loader.style.display = 'none';
+            }, 600);
+        }
+
+        // Initialize App Function
+        function initApp() {
+            lucide.createIcons();
+            renderProperties(state.properties);
+            
+            // Short delay to ensure rendering has started before revealing
+            setTimeout(hideLoader, 100);
+        }
+
+        // ENTRY POINT
+        // 1. If DOM is already ready (e.g., script runs late), run init immediately
+        if (document.readyState === 'interactive' || document.readyState === 'complete') {
+            initApp();
+        } else {
+            // 2. Otherwise wait for DOMContentLoaded
+            document.addEventListener('DOMContentLoaded', initApp);
+        }
+
+        // 3. FAILSAFE: Force remove loader after 2 seconds no matter what
+        // This fixes the issue if events don't fire or script hangs
+        setTimeout(hideLoader, 2000);
 
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
@@ -473,7 +501,7 @@
 
         // Format Currency
         const formatPrice = (price) => {
-            return new Intl.NumberFormat('en-US', { style: 'currency', currency: '₦', maximumSignificantDigits: 3 }).format(price);
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(price);
         };
 
         // Render Properties
@@ -491,7 +519,7 @@
                 card.style.animationDelay = `${index * 0.1}s`;
                 card.innerHTML = `
                     <div class="relative overflow-hidden aspect-[4/5] mb-6" onclick="openProperty(${prop.id})">
-                        <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                        <img loading="lazy" src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                         <div class="absolute bottom-6 left-6 text-brand-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
                             <span class="text-xs tracking-widest uppercase border-b border-brand-white pb-1">View Residence</span>
@@ -544,7 +572,7 @@
             const x = Math.pow(1 + interest, payments);
             const monthly = (principal * x * interest) / (x - 1);
             
-            return new Intl.NumberFormat('en-US', { style: 'currency', currency: '₦', maximumFractionDigits: 0 }).format(monthly);
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(monthly);
         }
 
         // Open Property Detail
