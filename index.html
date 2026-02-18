@@ -572,7 +572,7 @@
             const x = Math.pow(1 + interest, payments);
             const monthly = (principal * x * interest) / (x - 1);
             
-            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(monthly);
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: '₦', maximumFractionDigits: 0 }).format(monthly);
         }
 
         // Open Property Detail
